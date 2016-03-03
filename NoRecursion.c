@@ -1,65 +1,167 @@
-#include <stdbool.h>
+#include <stdio.h>
+#include <math.h>
 
-#include "NoRecursion.h"
+// Sequence 1:
 
-bool createStack(Stack **a, int n)
+int seq1(int para)
 {
-	(*a) = (Stack *) malloc( sizeof(Stack) );
-	
-	if ( (*a) == NULL )
+	if (para < 0)
 	{
-		return false;
+		return -1;
 	}
-	
-	(*a)->data = (int *) malloc(sizeof(int));
-	
-	if ( (*a)->data == NULL )
+	else if (para == 0)
 	{
-		return false;
+		return 1;
 	}
-	
-	(*a)->top = 0;
-	
-	return true;
+	else if (para == 1)
+	{
+		return 2;
+	}
+	else if (para == 2)
+	{
+		return 3;
+	}
+	else if (para > 3)
+	{
+		int a0, a1, a2, a3;
+		a0 = 1; a1 = 2; a2 = 3;
+		
+		int i;
+		for (i = 2; i < para; ++i)
+		{
+			a3 = a0 + a1 + a2;
+		}
+		
+		return a3;
+	}
 }
 
-bool isFull(Stack *a)
+// Sequence 2:
+
+
+// Sequence 3:
+
+int seq3(int para)
 {
-	if (a->top == STACK_SIZE)
+	if (para < 0)
 	{
-		return true;
+		return -1;
+	}
+	else if (para == 0)
+	{
+		return 1;
+	}
+	else if (para == 1)
+	{
+		return 2;
+	}
+	else if (para == 2)
+	{
+		return 3;
+	}
+	else if (para == 3)
+	{
+		return 4;
 	}
 	else
 	{
-		return false;
+		int a0, a1, a2, a3, a4;
+		a0 = 1; a1 = 2; a2 = 3, a3 = 4;
+		
+		int i;
+		for (i = 3; i < para; ++i)
+		{
+			a4 = a0 + a1 - a2 + a3;
+			a0 = a1;
+			a1 = a2;
+			a2 = a3;
+			a3 = a4;
+		}
+		
+		return a4;
 	}
 }
 
-bool isEmpty(Stack *a)
+// Sequence 4:
+
+int seq4(int para)
 {
-	if (a->top == 0)
+	if (para < 0)
 	{
-		return true;
+		return -1;
+	}
+	else if (para == 0)
+	{
+		return 1;
+	}
+	else if (para == 1)
+	{
+		return 2;
+	}
+	else if (para == 2)
+	{
+		return 3;
+	}
+	else if (para == 3)
+	{
+		return 4;
 	}
 	else
 	{
-		return false;
+		int a0, a1, a2, a3, a4;
+		a0 = 1; a1 = 2; a2 = 3, a3 = 4;
+		
+		int i;
+		for (i = 3; i < para; ++i)
+		{
+			a4 = a0 - a1 + a2 + a3;
+			a0 = a1;
+			a1 = a2;
+			a2 = a3;
+			a3 = a4;
+		}
+		
+		return a4;
 	}
 }
 
-void push(Stack *a, int data)
+// Sequence 5:
+
+float seq5(int para)
 {
-	a->data[ a->top ] = *data;
-	a->top ++;
+	float X[para + 1];
+	
+	int i;
+	for (i = 0; i <= para; ++i)
+	{
+		X[i] = 0;
+	}
+	
+	X[0] = 1;
+	
+	int j;
+	for (i = 1; i <= para; ++i)
+	{
+		for (j = 0; j < i; ++j)
+		{
+			X[i] += cbrt(para - j) * X[j];
+		}
+	}
+	
+	return X[para];
 }
 
-int pop(Stack *a)
+int main()
 {
-	a->top --;
-	*data = a->data[ a->top ];
-}
-
-int getTop(Stack *a)
-{
-	return a->data[ a->top - 1 ];
+	int n;
+	fflush(stdin);
+	scanf("%d", &n);
+	
+	int i;
+	for (i = 0; i < n; ++i)
+	{
+		printf("%.2f  ", seq5(i));
+	}
+	
+	return 0;
 }

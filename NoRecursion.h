@@ -1,31 +1,20 @@
-#ifndef H_RECURSION
-#define H_RECURSION
+#ifndef H_NORECURSION
+#define H_NORECURSION
 
-#include <stdbool.h>
+// Squence 1:
 
-#ifndef H_STACK
-#define H_STACK
+int seq1(int para);
 
+// Squence 2:
 
+// Squence 3:
 
-struct stack
-{
-	int * data;
-	int top;
-};
+int seq3(int para);
 
-typedef struct stack Stack;
+// Squence 4:
 
-bool createStack(Stack **a, int n);
+int seq4(int para);
 
-bool isFull(Stack *a);
-bool isEmpty(Stack *a);
+// Squence 5:
 
-void push(Stack *a, int data);
-int pop(Stack *a);
-
-int getTop(Stack *a);
-#endif
-
-
-#endif
+int seq5(int para);

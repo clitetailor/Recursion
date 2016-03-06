@@ -3,18 +3,20 @@
 
 // Squence 1:
 
-int seq1(int para);
+int seq1sum(int para);
 
 // Squence 2:
 
 // Squence 3:
 
-int seq3(int para);
+int seq3sum(int para);
 
 // Squence 4:
 
-int seq4(int para);
+int seq4sum(int para);
 
 // Squence 5:
 
 int seq5(int para);
+
+#endif

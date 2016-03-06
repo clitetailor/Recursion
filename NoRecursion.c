@@ -3,7 +3,7 @@
 
 // Sequence 1:
 
-int seq1(int para)
+int seq1sum(int para)
 {
 	if (para < 0)
 	{
@@ -15,14 +15,15 @@ int seq1(int para)
 	}
 	else if (para == 1)
 	{
-		return 2;
+		return 3;
 	}
 	else if (para == 2)
 	{
-		return 3;
+		return 6;
 	}
 	else if (para > 3)
 	{
+		int sum = 6;
 		int a0, a1, a2, a3;
 		a0 = 1; a1 = 2; a2 = 3;
 		
@@ -30,9 +31,10 @@ int seq1(int para)
 		for (i = 2; i < para; ++i)
 		{
 			a3 = a0 + a1 + a2;
+			sum += a3;
 		}
 		
-		return a3;
+		return sum;
 	}
 }
 
@@ -41,7 +43,7 @@ int seq1(int para)
 
 // Sequence 3:
 
-int seq3(int para)
+int seq3sum(int para)
 {
 	if (para < 0)
 	{
@@ -53,18 +55,19 @@ int seq3(int para)
 	}
 	else if (para == 1)
 	{
-		return 2;
+		return 3;
 	}
 	else if (para == 2)
 	{
-		return 3;
+		return 6;
 	}
 	else if (para == 3)
 	{
-		return 4;
+		return 10;
 	}
 	else
 	{
+		int sum = 10;
 		int a0, a1, a2, a3, a4;
 		a0 = 1; a1 = 2; a2 = 3, a3 = 4;
 		
@@ -76,15 +79,16 @@ int seq3(int para)
 			a1 = a2;
 			a2 = a3;
 			a3 = a4;
+			sum += a4;
 		}
 		
-		return a4;
+		return sum;
 	}
 }
 
 // Sequence 4:
 
-int seq4(int para)
+int seq4sum(int para)
 {
 	if (para < 0)
 	{
@@ -96,18 +100,19 @@ int seq4(int para)
 	}
 	else if (para == 1)
 	{
-		return 2;
+		return 3;
 	}
 	else if (para == 2)
 	{
-		return 3;
+		return 6;
 	}
 	else if (para == 3)
 	{
-		return 4;
+		return 10;
 	}
 	else
 	{
+		int sum = 10
 		int a0, a1, a2, a3, a4;
 		a0 = 1; a1 = 2; a2 = 3, a3 = 4;
 		
@@ -119,9 +124,10 @@ int seq4(int para)
 			a1 = a2;
 			a2 = a3;
 			a3 = a4;
+			sum += a4;
 		}
 		
-		return a4;
+		return sum;
 	}
 }
 
@@ -144,24 +150,9 @@ float seq5(int para)
 	{
 		for (j = 0; j < i; ++j)
 		{
-			X[i] += cbrt(para - j) * X[j];
+			X[i] += cbrt(i - j) * X[j];
 		}
 	}
 	
 	return X[para];
-}
-
-int main()
-{
-	int n;
-	fflush(stdin);
-	scanf("%d", &n);
-	
-	int i;
-	for (i = 0; i < n; ++i)
-	{
-		printf("%.2f  ", seq5(i));
-	}
-	
-	return 0;
 }

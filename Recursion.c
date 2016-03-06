@@ -4,24 +4,24 @@
 
 // Sequence 1:
 
-int seq1rec(int para)
+int seq1sumrec(int para)
 {
-	return seq1tailrec(para, 1, 2, 3);
+	return seq1tailrec(para, 1, 2, 3, 6);
 }
 
-int seq1tailrec(int para, int a0, int a1, int a2)
+int seq1sumtailrec(int para, int a0, int a1, int a2, int sum)
 {
 	if (para > 2)
 	{
-		return seq1tailrec(para - 1, a1, a2, a0 + a1 + a2);
+		return seq1tailrec(para - 1, a1, a2, a0 + a1 + a2, sum + a0 + a1 + a2);
 	}
 	else if (para == 2)
 	{
-		return a2;
+		return sum;
 	}
 	else if (para == 1)
 	{
-		return a1;
+		return a1 + a0;
 	}
 	else if (para == 0)
 	{
@@ -39,28 +39,28 @@ int seq1tailrec(int para, int a0, int a1, int a2)
 
 // Sequence 3:
 
-int seq3rec(int para)
+int seq3sumrec(int para)
 {
-	return seq3tailrec(para, 1, 2, 3, 4);
+	return seq3sumtailsumrec(para, 1, 2, 3, 4, 10);
 }
 
-int seq3tailrec(int para, int a0, int a1, int a2, int a3)
+int seq3sumtailrec(int para, int a0, int a1, int a2, int a3, int sum)
 {
 	if (para > 3)
 	{
-		return seq3tailrec(para - 1, a1, a2, a3, a0 + a1 - a2 + a3);
+		return seq3sumtailrec(para - 1, a1, a2, a3, a0 + a1 - a2 + a3, sum + a0 + a1 - a2 + a3);
 	}
 	else if (para == 3)
 	{
-		return a3;
+		return sum;
 	}
 	else if (para == 2)
 	{
-		return a2;
+		return a2 + a1 + a0;
 	}
 	else if (para == 1)
 	{
-		return a1;
+		return a1 + a0;
 	}
 	else if (para == 0)
 	{
@@ -74,28 +74,28 @@ int seq3tailrec(int para, int a0, int a1, int a2, int a3)
 
 // Sequence 4:
 
-int seq4rec(int para)
+int seq4sumrec(int para)
 {
-	return seq4tailrec(para, 1, 2, 3, 4);
+	return seq4sumtailrec(para, 1, 2, 3, 4, 10);
 }
 
-int seq4tailrec(int para, int a0, int a1, int a2, int a3)
+int seq4tailrec(int para, int a0, int a1, int a2, int a3, int sum)
 {
 	if (para > 3)
 	{
-		return seq4tailrec(para - 1, a1, a2, a3, a0 - a1 + a2 + a3);
+		return seq4tailrec(para - 1, a1, a2, a3, a0 - a1 + a2 + a3, sum + a0 - a1 + a2 + a3);
 	}
 	else if (para == 3)
 	{
-		return a3;
+		return sum;
 	}
 	else if (para == 2)
 	{
-		return a2;
+		return a2 + a1 + a0;
 	}
 	else if (para == 1)
 	{
-		return a1;
+		return a1 + a0;
 	}
 	else if (para == 0)
 	{
@@ -139,29 +139,4 @@ void seq5tailrec(int para, float * arr)
 			arr[para] += cbrt(para - i) * arr[i];
 		}
 	}
-}
-
-
-int main()
-{
-	int n;
-	fflush(stdin);
-	scanf("%d", &n);
-	
-	
-	int i;
-	
-	float X[n + 1];
-	for (i = 0; i <= n; ++i)
-	{
-		X[i] = 0;
-	}
-	seq5tailrec(n, X);
-	
-	for (i = 0; i <= n; ++i)
-	{
-		printf("  %.2f", X[i] );
-	}
-	
-	return 0;
 }

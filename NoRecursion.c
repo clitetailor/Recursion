@@ -31,6 +31,9 @@ int seq1sum(int para)
 		for (i = 2; i < para; ++i)
 		{
 			a3 = a0 + a1 + a2;
+			a0 = a1;
+			a1 = a2;
+			a2 = a3;
 			sum += a3;
 		}
 		
@@ -112,7 +115,7 @@ int seq4sum(int para)
 	}
 	else
 	{
-		int sum = 10
+		int sum = 10;
 		int a0, a1, a2, a3, a4;
 		a0 = 1; a1 = 2; a2 = 3, a3 = 4;
 		

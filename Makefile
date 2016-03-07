@@ -1,7 +1,5 @@
 all:
+	g++ -c Check.c
 	g++ -c NoRecursion.c
-	g++ -o main.exe NoRecursion.o
-
-test:
-	gcc -c Recursion.c
-	gcc -o main.exe Recursion.o	
+	g++ -c Recursion.c
+	g++ -o Check.exe NoRecursion.o Recursion.o Check.o

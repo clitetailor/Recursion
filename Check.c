@@ -78,7 +78,7 @@ void MenuManager1()
 				}
 				
 				int j;
-				for (j = 0; j < i; ++j)
+				for (j = 0; j <= i; ++j)
 				{
 					printf("\nGia tri phan tu thu %d cua day la: %f\n", j, seq5rec(j));
 					Sleep(100);

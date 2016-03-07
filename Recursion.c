@@ -210,7 +210,7 @@ float seq5rec(int para)
 	float X[para + 1];
 	
 	int i;
-	for (i = 0; i < para; ++i)
+	for (i = 0; i <= para; ++i)
 	{
 		X[i] = 0;
 	}

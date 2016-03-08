@@ -43,6 +43,51 @@ int seq1sum(int para)
 
 // Sequence 2:
 
+int seq2sum(int para)
+{
+	if (para < 0)
+	{
+		return -1;
+	}
+	else if (para == 0)
+	{
+		return 1;
+	}
+	else if (para == 1)
+	{
+		return 3;
+	}
+	else if (para == 2)
+	{
+		return 6;
+	}
+	else if (para == 3)
+	{
+		return 13;
+	}
+	else if (para == 4)
+	{
+		return 26;
+	}
+	else
+	{
+		int a3;
+		int a0 = 3, a1 = 7, a2 = 13;
+		int sum = 26;
+		
+		int i;
+		for (i = 4; i < para; ++i)
+		{
+			a3 = a0 + a1 + a2;
+			a0 = a1;
+			a1 = a2;
+			a2 = a3;
+			sum += a3;
+		}
+		
+		return sum;
+	}
+}
 
 // Sequence 3:
 

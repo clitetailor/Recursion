@@ -65,7 +65,79 @@ int seq1tailrec(int para, int a0, int a1, int a2)
 
 // Sequence 2:
 
+int seq2rec(int para)
+{
+	return seq2tailrec(para, 3, 7, 13);
+}
 
+int seq2tailrec(int para, int a0, int a1, int a2)
+{
+	if (para == 0)
+	{
+		return 1;
+	}
+	else if (para == 1)
+	{
+		return 2;
+	}
+	else if (para == 2)
+	{
+		return 3;
+	}
+	else if (para == 3)
+	{
+		return 7;
+	}
+	else if (para == 4)
+	{
+		return a2;
+	}
+	else if (para > 4)
+	{
+		return seq2tailrec(para - 1, a1, a2, a0 + a1 + a2);
+	}
+	else
+	{
+		return -1;
+	}
+}
+
+int seq2sumrec(int para)
+{
+	return seq2sumtailrec(para, 3, 7, 13, 26);
+}
+
+int seq2sumtailrec(int para, int a0, int a1, int a2, int sum)
+{
+	if (para == 0)
+	{
+		return 1;
+	}
+	else if (para == 1)
+	{
+		return 3;
+	}
+	else if (para == 2)
+	{
+		return 6;
+	}
+	else if (para == 3)
+	{
+		return 13;
+	}
+	else if (para == 4)
+	{
+		return sum;
+	}
+	else if (para > 4)
+	{
+		return seq2sumtailrec(para - 1, a1, a2, a0 + a1 + a2, sum + a0 + a1 + a2);
+	}
+	else
+	{
+		return -1;
+	}
+}
 
 // Sequence 3:
 

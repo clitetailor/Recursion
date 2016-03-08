@@ -11,9 +11,9 @@ int seq1tailrec(int para, int a0, int a1, int a2);
 // Sequence 2: 1, 2, 3, 7, 13, 23, 43, 79, 145, ...
 
 int seq2sumrec(int para);
-int seq2sumtailrec(int para, int a0, int a1, int a2, int a3, int sum);
+int seq2sumtailrec(int para, int a0, int a1, int a2, int sum);
 int seq2rec(int para);
-int seq2tailrec(int para, int a0, int a1, int a2, int a3);
+int seq2tailrec(int para, int a0, int a1, int a2);
 
 // Sequence 3:
 

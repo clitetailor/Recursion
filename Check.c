@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <windows.h>
 #include "NoRecursion.h"
 #include "Recursion.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
 
 
 void MenuManager1();
@@ -203,19 +203,19 @@ void Run(int para1, int para2, int i)
 			{
 				case 1:
 				{
-					printf("\nGia tri phan tu thu %d cua day: %d\n", i, 0);
+					printf("\nGia tri phan tu thu %d cua day: %d\n", i, seq2rec(i));
 					Sleep(100);
 					break;
 				}
 				case 2:
 				{
-					printf("\nTong cua day den phan tu thu %d dung de quy: %d\n", i, 0);
+					printf("\nTong cua day den phan tu thu %d dung de quy: %d\n", i, seq2sumrec(i));
 					Sleep(100);
 					break;
 				}
 				case 3:
 				{
-					printf("\nTong cua day den phan tu thu %d khong dung de quy: %d\n", i, 0);
+					printf("\nTong cua day den phan tu thu %d khong dung de quy: %d\n", i, seq2sum(i));
 					Sleep(100);
 					break;
 				}
